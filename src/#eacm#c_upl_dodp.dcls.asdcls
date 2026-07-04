@@ -1,0 +1,6 @@
+@EndUserText.label: '/EACM/C_UPL_DODP'
+@MappingRole: true
+define role /EACM/C_UPL_DODP {
+  grant select on /EACM/C_UPL_DODP
+  where INHERITING CONDITIONS FROM ENTITY /EACM/I_UPL_DODP REPLACING { ROOT WITH _BaseEntity };
+}

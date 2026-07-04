@@ -1,0 +1,18 @@
+managed implementation in class /eacm/bp_i_upl_tools unique;
+strict ( 1 );
+
+define behavior for /EACM/I_UPL_TOOLS alias UploadTools
+persistent table /eacm/upl_tools
+lock master
+authorization master ( none )
+{
+  field ( readonly ) id;
+
+  static function ( authorization : none ) getTables       parameter /EACM/A_TBL_REQ result [0..*] /EACM/A_TBL_INFO;
+  static function ( authorization : none ) previewTable    parameter /EACM/A_PRV_REQ result [1]   /EACM/A_PRV_RES;
+  static function ( authorization : none ) getTransports                              result [0..*] /EACM/A_TRP_INFO;
+  static action   ( authorization : none ) downloadTemplate parameter /EACM/A_TPL_REQ result [1]   /EACM/A_TPL_RES;
+  static action   ( authorization : none ) deleteRows       parameter /EACM/A_DEL_REQ result [1]   /EACM/A_DEL_RES;
+
+  mapping for /eacm/upl_tools corresponding;
+}

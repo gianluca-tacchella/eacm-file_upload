@@ -1,0 +1,5 @@
+@EndUserText.label: 'eACM File Upload Service'
+define service /EACM/UPLOAD_SD {
+  expose /EACM/I_UPLOAD_LOG as UploadLog;
+  expose /EACM/I_UPL_TOOLS  as UploadTools;
+}

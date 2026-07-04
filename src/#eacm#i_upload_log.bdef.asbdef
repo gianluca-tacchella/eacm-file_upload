@@ -1,0 +1,16 @@
+managed implementation in class /eacm/bp_i_upload_log unique;
+strict ( 2 );
+
+define behavior for /EACM/I_UPLOAD_LOG alias UploadLog
+persistent table /eacm/upl_log
+lock master
+authorization master ( global )
+{
+  field ( readonly, numbering : managed ) upload_id;
+  field ( readonly ) uploaded_at, uploaded_by, target_table, file_name, file_type,
+                     upload_mode, rows_in_file, rows_inserted, status, message, transport;
+
+  static action uploadFile parameter /EACM/A_UPL_REQ result [1] /EACM/A_UPL_RES;
+
+  mapping for /eacm/upl_log corresponding;
+}

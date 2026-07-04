@@ -1,0 +1,218 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'FileID'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'FileID'
+annotate view /EACM/C_UPL_DODP with
+{
+
+  @UI.facet: [
+      { id: 'idEndUser', purpose: #HEADER, position: 10, type: #DATAPOINT_REFERENCE, targetQualifier: 'tqEndUser'  },
+      { id: 'idChgAt', purpose: #HEADER, position: 20, type: #DATAPOINT_REFERENCE, targetQualifier: 'tqChgAt'  },
+      { id: 'idStatus', purpose: #HEADER, position: 30, type: #DATAPOINT_REFERENCE, targetQualifier: 'tqStatus'  },
+      { id: 'idFile', purpose: #STANDARD, position: 50, label: 'File Upload', type: #IDENTIFICATION_REFERENCE }
+  //      { id: 'idData', purpose: #STANDARD, position: 60, label: 'File Data', type: #LINEITEM_REFERENCE, targetElement: '_Data' }
+  ]
+
+  //  @EndUserText.label: 'FileID'
+  //  @UI.facet: [ {
+  //    label: 'General Information',
+  //    id: 'GeneralInfo',
+  //    purpose: #STANDARD,
+  //    position: 10 ,
+  //    type: #IDENTIFICATION_REFERENCE
+  //  } ]
+  //  @UI.identification: [ {
+  //    position: 10 ,
+  //    label: 'FileID'
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 10 ,
+  //    label: 'FileID'
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 10
+  //  } ]
+  //  FileID;
+
+    @UI.selectionField: [ {
+      position: 15
+    } ]
+  @UI.identification: [{ position: 15, type: #FOR_ACTION, label: 'Upload Data', dataAction: 'uploadFileData' }]
+  @UI.lineItem: [{ position: 15, label: 'User' }]
+  @UI.dataPoint: { qualifier: 'tqEndUser', title: 'User'}
+  EndUser;
+
+  //  @EndUserText.label: 'FileStatus'
+  //  @UI.identification: [ {
+  //    position: 30 ,
+  //    label: 'FileStatus'
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 30 ,
+  //    label: 'FileStatus'
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 30
+  //  } ]
+  @UI.lineItem: [{ position: 20, label: 'File Status' }]
+  @UI.dataPoint: { qualifier: 'tqStatus', title: 'File Status'}
+  FileStatus;
+
+  @EndUserText.label: 'Attachment'
+  @UI.identification: [ {
+    position: 40 ,
+    label: 'Attachment'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 ,
+    label: 'Attachment'
+  } ]
+  Attachment;
+
+  //  @EndUserText.label: 'Mimetype'
+  //  @UI.identification: [ {
+  //    position: 50 ,
+  //    label: 'Mimetype'
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 50 ,
+  //    label: 'Mimetype'
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 50
+  //  } ]
+  @UI.hidden: true
+  Mimetype;
+
+//  @EndUserText.label: 'Filename'
+//  @UI.identification: [ {
+//    position: 60 ,
+//    label: 'Filename'
+//  } ]
+  @UI.lineItem: [ {
+    position: 60 ,
+    label: 'Filename'
+  } ]
+//  @UI.selectionField: [ {
+//    position: 60
+//  } ]
+  Filename;
+
+  @EndUserText.label: 'Tabella'
+  @UI.identification: [ {
+    position: 70 ,
+    label: 'Tabella'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 ,
+    label: 'Tabella'
+  } ]
+  @UI.selectionField: [ {
+    position: 70
+  } ]
+  @Consumption.valueHelpDefinition: [{ entity:
+  {name: '/EACM/upl_H_dodp' , element: 'text' },
+  distinctValues: true
+  }]
+  Dodp;
+
+  @EndUserText.label: 'TestMode'
+  @UI.identification: [ {
+    position: 80 ,
+    label: 'TestMode'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 ,
+    label: 'TestMode'
+  } ]
+  @UI.selectionField: [ {
+    position: 80
+  } ]
+  TestMode;
+
+  @EndUserText.label: 'Cancella dati esistenti'
+  @UI.identification: [ {
+    position: 90 ,
+    label: 'Cancella dati esistenti'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 ,
+    label: 'Cancella dati esistenti'
+  } ]
+  @UI.selectionField: [ {
+    position: 90
+  } ]
+  Tbdel;
+
+  @UI.identification: [ {
+    position: 100
+  } ]
+  @UI.lineItem: [ {
+    position: 100
+  } ]
+  @UI.selectionField: [ {
+    position: 100
+  } ]
+  LocalCreatedBy;
+
+  @UI.identification: [ {
+    position: 110
+  } ]
+  @UI.lineItem: [ {
+    position: 110
+  } ]
+  @UI.selectionField: [ {
+    position: 110
+  } ]
+  LocalCreatedAt;
+
+  @UI.identification: [ {
+    position: 120
+  } ]
+  @UI.lineItem: [ {
+    position: 120
+  } ]
+  @UI.selectionField: [ {
+    position: 120
+  } ]
+  LocalLastChangedBy;
+
+  @UI.identification: [ {
+    position: 130
+  } ]
+  @UI.lineItem: [ {
+    position: 130
+  } ]
+  @UI.selectionField: [ {
+    position: 130
+  } ]
+  @UI.dataPoint: { qualifier: 'tqChgAt', title: 'Last Changet At' }
+  LocalLastChangedAt;
+
+//  @UI.identification: [ {
+//    position: 140
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 140
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 140
+//  } ]
+  @UI.hidden: true
+  LastChangedAt;
+
+  @EndUserText.label: '_BaseEntity'
+  @UI.identification: [ {
+    position: 150 ,
+    label: '_BaseEntity'
+  } ]
+  @UI.lineItem: [ {
+    position: 150 ,
+    label: '_BaseEntity'
+  } ]
+  @UI.selectionField: [ {
+    position: 150
+  } ]
+  _BaseEntity;
+}

@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "{{appDescription}}",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Upload table ZPRDO/ZPRDP"
+  },
+  "ui5AppDetails": {
+    "appId": "eacm.upldodp"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_25002DEDAFC2C6B9B75C2E32AFFBBB15E15FB688_TM",
+    "semanticObject": "ZEACM_UPL_DODP",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_25002DEDAFC2C6B9B75C2E32AFFBBB15E15FB688_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Upload table ZPRDO/ZPRDP"
+      }
+    }
+  ]
+}

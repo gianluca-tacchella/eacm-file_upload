@@ -1,0 +1,68 @@
+managed
+with additional save
+implementation in class /EACM/BP_I_UPL_DODP unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for /EACM/I_UPL_DODP alias /eacm/iUplDodp
+persistent table /eacm/upl_dodp
+extensible
+draft table /eacm/upl_dodp_d
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+//lock master unmanaged
+//total etag LocalLastChangedAt
+authorization master ( global )
+{
+  field ( readonly )
+  FileID,
+  LocalCreatedBy,
+  LocalCreatedAt,
+  LocalLastChangedBy,
+  LocalLastChangedAt,
+  LastChangedAt;
+
+  field ( numbering : managed )
+  FileID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  action uploadFileData result [1] $self;
+  determination FillFileStatus on modify { field FileID; }
+  determination FillSelectedStatus on modify { field Attachment; }
+//  determination setFinalStatus on save { create; update; }
+
+  side effects
+  {
+    field Attachment affects field FileStatus;
+    action uploadFileData affects $self, messages;
+  }
+
+  mapping for /eacm/upl_dodp corresponding extensible
+    {
+      FileID             = FILE_ID;
+      EndUser            = END_USER;
+      FileStatus         = FILE_STATUS;
+      Attachment         = ATTACHMENT;
+      Mimetype           = MIMETYPE;
+      Filename           = FILENAME;
+      Dodp               = DODP;
+      TestMode           = TEST_MODE;
+      Tbdel              = TBDEL;
+      LocalCreatedBy     = LOCAL_CREATED_BY;
+      LocalCreatedAt     = LOCAL_CREATED_AT;
+      LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+      LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+      LastChangedAt      = LAST_CHANGED_AT;
+    }
+
+}

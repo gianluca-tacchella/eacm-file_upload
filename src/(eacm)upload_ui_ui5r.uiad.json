@@ -1,0 +1,36 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Generic file upload into /EACM/ tables",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "File Upload"
+  },
+  "ui5AppDetails": {
+    "appId": "eacm.fileupload"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_741672763360A44299180490F524071A7FDF5D31_TM",
+    "semanticObject": "EACMFileUpload",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_741672763360A44299180490F524071A7FDF5D31_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "File Upload",
+        "subtitle": "eACM Tables",
+        "icon": "sap-icon://upload"
+      }
+    }
+  ]
+}

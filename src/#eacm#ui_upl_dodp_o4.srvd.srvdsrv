@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for /EACM/C_UPL_DODP'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: '/EACM/C_UPL_DODP'
+  }
+}
+define service /EACM/UI_UPL_DODP_O4 provider contracts odata_v4_ui {
+  expose /EACM/C_UPL_DODP;
+}

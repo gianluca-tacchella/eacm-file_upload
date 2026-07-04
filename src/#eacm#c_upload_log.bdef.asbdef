@@ -1,0 +1,7 @@
+projection;
+strict ( 2 );
+
+define behavior for /EACM/C_UPLOAD_LOG alias UploadLog
+{
+  use action uploadFile;
+}

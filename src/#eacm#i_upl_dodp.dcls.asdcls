@@ -1,0 +1,6 @@
+@EndUserText.label: '/EACM/I_UPL_DODP'
+@MappingRole: true
+define role /EACM/I_UPL_DODP {
+  grant select on /EACM/I_UPL_DODP
+  where TRUE;
+}
